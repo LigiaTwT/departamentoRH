@@ -2,30 +2,43 @@
   <nav class="navbar">
     <div class="logo">DEPARTAMENTO <span>RH</span></div>
     <ul class="nav-links">
-      <li><button (click)="setPage('home')" [class.active]="currentPage === 'home'">Home</button></li>
-      <li><button (click)="setPage('vagas')" [class.active]="currentPage === 'vagas'">Vagas</button></li>
+      <li>
+        <button (click)="currentPage = 'home'" [class.active]="currentPage === 'home'">Home</button>
+      </li>
+      <li>
+        <button (click)="currentPage = 'vagas'" [class.active]="currentPage === 'vagas'">Vagas</button>
+      </li>
     </ul>
-    <button class="btn-login">Entrar</button>
+    <button class="btn-outline">Entrar</button>
   </nav>
 
   <main *ngIf="currentPage === 'home'" class="fade-in">
     <section class="hero">
       <h1>Conectando Talentos ao Futuro.</h1>
-      <p>O Departamento de RH é especialista em recrutamento estratégico e gestão de carreiras. Transformamos processos seletivos em experiências humanas.</p>
-      <button class="btn-primary" (click)="setPage('vagas')">Ver Oportunidades</button>
+      <p>Especialistas em recrutamento estratégico e gestão de carreiras. Transformamos processos seletivos em experiências humanas de alto impacto.</p>
+      <button class="btn-primary" (click)="currentPage = 'vagas'">Ver Oportunidades</button>
     </section>
 
-    <section class="stats">
+    <section class="stats-container">
       <div class="stat-card"><h3>+500</h3><p>Vagas Preenchidas</p></div>
       <div class="stat-card"><h3>120</h3><p>Empresas Parceiras</p></div>
       <div class="stat-card"><h3>24h</h3><p>Suporte ao Candidato</p></div>
+    </section>
+
+    <section class="info-section">
+      <h2>Por que escolher o Departamento RH?</h2>
+      <p>
+        Nossa plataforma utiliza algoritmos de IA de última geração para conectar o perfil comportamental 
+        dos candidatos às necessidades técnicas das empresas em tempo real.
+      </p>
+      <button class="btn-large">Conhecer Metodologia</button>
     </section>
   </main>
 
   <section *ngIf="currentPage === 'vagas'" class="vagas-container fade-in">
     <div class="search-bar">
-      <input type="text" placeholder="Cargo ou palavra-chave" #jobSearch>
-      <button class="btn-search" (click)="filtrar(jobSearch.value)">Buscar</button>
+      <input type="text" placeholder="Cargo, tecnologia ou palavra-chave..." #jobSearch>
+      <button class="btn-primary" (click)="filtrar(jobSearch.value)">Buscar</button>
     </div>
 
     <div class="job-grid">
@@ -34,7 +47,7 @@
           <h3>{{vaga.titulo}}</h3>
           <span class="badge">{{vaga.tipo}}</span>
         </div>
-        <p class="company">Departamento de RH • {{vaga.local}}</p>
+        <p class="company"><strong>Departamento de RH</strong> • {{vaga.local}}</p>
         <p class="description">{{vaga.desc}}</p>
         <div class="job-footer">
           <span class="salary">{{vaga.salario}}</span>
@@ -44,7 +57,28 @@
     </div>
   </section>
 
-  <footer class="footer">
-    &copy; 2026 Departamento de RH - Todos os direitos reservados.
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h4>DEPARTAMENTO RH</h4>
+        <p>Transformando o mercado de trabalho<br>através da tecnologia.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Links Úteis</h5>
+        <ul>
+          <li><a href="#">Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Trabalhe Conosco</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h5>Contato</h5>
+        <p>contato@deptorh.com.br</p>
+        <p>Porto Velho, RO</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Departamento de RH - Todos os direitos reservados.</p>
+    </div>
   </footer>
 </div>
