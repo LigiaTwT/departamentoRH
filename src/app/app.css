@@ -1,0 +1,66 @@
+:host {
+  --primary-blue: #002c77;
+  --light-blue: #00a1ff;
+  --dark-grey: #333;
+  --light-grey: #f4f7f9;
+  --white: #ffffff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.app-container {
+  background-color: var(--light-grey);
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: var(--white);
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo { font-weight: bold; font-size: 1.5rem; color: var(--dark-grey); }
+.logo span { color: var(--primary-blue); }
+
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links button {
+  background: none; border: none; cursor: pointer; font-weight: 600;
+  color: var(--dark-grey); padding-bottom: 5px;
+}
+.nav-links button.active { border-bottom: 3px solid var(--primary-blue); color: var(--primary-blue); }
+
+/* Hero Section */
+.hero {
+  text-align: center; padding: 80px 10%;
+  background: linear-gradient(rgba(0,44,119,0.9), rgba(0,44,119,0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200');
+  background-size: cover; color: var(--white);
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+
+/* Vagas */
+.vagas-container { padding: 40px 10%; }
+.search-bar { display: flex; gap: 10px; margin-bottom: 30px; }
+.search-bar input { flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 4px; }
+
+.job-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.job-card {
+  background: var(--white); padding: 20px; border-radius: 8px;
+  border: 1px solid #e0e0e0; transition: transform 0.2s;
+}
+.job-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+
+.badge { background: #e8f0fe; color: var(--primary-blue); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; }
+
+/* Botões */
+.btn-primary { background: var(--primary-blue); color: white; border: none; padding: 12px 25px; border-radius: 4px; cursor: pointer; }
+.btn-outline { border: 1px solid var(--primary-blue); color: var(--primary-blue); background: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
+.btn-outline:hover { background: var(--primary-blue); color: white; }
+
+/* Animação */
+.fade-in { animation: fadeIn 0.5s ease-in; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
