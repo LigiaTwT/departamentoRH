@@ -1,0 +1,17 @@
+<div class="vagas-container">
+    <h2>Vagas em Aberto</h2>
+    
+    <div class="lista-vagas">
+        <div class="vaga-item" *ngFor="let v of vagas">
+            <div class="info-vaga">
+                <h4>{{ v.titulo }}</h4>
+                <div class="detalhes-meta">
+                    <span>{{ v.empresa }}</span>
+                    <span>{{ v.local }}</span>
+                    <span class="tag-salario">{{ v.salario }}</span>
+                </div>
+            </div>
+            <button class="btn-detalhes">Ver Candidatos</button>
+        </div>
+    </div>
+</div>
