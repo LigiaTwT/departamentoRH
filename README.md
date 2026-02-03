@@ -63,10 +63,4 @@ Mantenha o código seguro e funcional com os testes automatizados:
 
 Para mais detalhes sobre as ferramentas utilizadas, consulte a [Documentação do Angular CLI](https://angular.dev/tools/cli). 📚✨
 
----
 
-**Desenvolvido com dedicação e café! ☕💻**
-
----
-
-Gostaria que eu adicionasse uma seção de **Funcionalidades** ou uma tabela de **Rotas do Sistema** para deixá-lo ainda mais completo?
